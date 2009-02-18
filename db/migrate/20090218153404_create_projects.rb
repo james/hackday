@@ -1,7 +1,12 @@
 class CreateProjects < ActiveRecord::Migration
   def self.up
     create_table :projects do |t|
-
+      t.string :title
+      t.text :description
+      t.string :url
+      t.string :github_user
+      t.string :github_repo
+      t.string :svn_path
       t.timestamps
     end
   end
