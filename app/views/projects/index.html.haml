@@ -1,0 +1,5 @@
+%ul
+  - @projects.each do |project|
+    %li= link_to h(project.title), project_path(project)
+
+= link_to "Add your project", new_project_path
