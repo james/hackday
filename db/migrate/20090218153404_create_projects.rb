@@ -7,6 +7,7 @@ class CreateProjects < ActiveRecord::Migration
       t.string :github_user
       t.string :github_repo
       t.string :svn_path
+      t.string :openid
       t.timestamps
     end
   end
