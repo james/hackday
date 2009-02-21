@@ -6,3 +6,18 @@
   font-size:2em;
   padding:0.5em 0;
 }
+
+ul.flickr_tag_photos{
+  list-style: none;
+  margin:0;
+}
+ul.flickr_tag_photos li {
+  display:inline;
+}
+ul.flickr_tag_photos li img {
+  max-width:20%;
+}
+ul.flickr_tag_photos:first-child img {
+  max-width:100%;
+  max-height:300px;
+}

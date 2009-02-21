@@ -7,6 +7,9 @@ class Project < ActiveRecord::Base
   end
   
   def flickr_tag
-    "rewiredstate:#{self.title}"
+    %{rewiredstate:project="#{self.slug}"}
+  end
+  def flickr_url
+    %{http://flickr.com/photos/tags/#{flickr_tag}}
   end
 end

@@ -1,5 +1,15 @@
 %h1=h @project.title
 
 %hr
-.span-12
+.span-8
   = markdown @project.description
+
+.span-8.last
+  %p 
+    = link_to "Pictures of <em>#{h @project.title}</em> on Flickr.", @project.flickr_url, :class => "photos"
+    To add more, tag pictures with
+    = @project.flickr_tag
+  %script
+    $('.photos').attach(FlickrTag,
+    = "'" + @project.flickr_tag + "'"
+    );
