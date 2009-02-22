@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   def new
-    
+    @project = Project.find_by_slug(params[:project])
   end
   
   def create
@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
         if project = Project.find_by_openid(identity_url)
           redirect_to edit_project_path(project)
         else
-          redirect_to '/'
+          redirect_to projects_path
         end
       else
         redirect_to :action => 'new'

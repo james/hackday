@@ -12,6 +12,6 @@ class ProjectsController < ApplicationController
   private
   
   def owner_only
-    redirect_to new_session_path unless session[:openid_url] && session[:openid_url] == @current_object.openid
+    redirect_to new_session_path(:project => @current_object) unless session[:openid_url] && session[:openid_url] == @current_object.openid
   end
 end
