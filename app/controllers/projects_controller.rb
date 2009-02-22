@@ -1,7 +1,17 @@
 class ProjectsController < ApplicationController
-  resources_controller_for :projects
+  make_resourceful do
+    actions :all
+  end
   
-  def find_resource
-    Project.find_by_slug(params[:id]) || raise(ActiveRecord::RecordNotFound)
+  before_filter :owner_only, :except => [:index, :show, :new, :create]
+  
+  def current_object
+    @current_object ||= current_model.find_by_slug(params[:id])
+  end
+  
+  private
+  
+  def owner_only
+    redirect_to new_session_path unless session[:openid_url] && session[:openid_url] == @current_object.openid
   end
 end

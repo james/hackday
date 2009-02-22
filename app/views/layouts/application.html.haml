@@ -12,5 +12,10 @@
   %body
     .container
       .header
-        Rewired State project archive
+        %p Rewired State project archive
+        - if session[:openid_url]
+          %p
+            Logged in as
+            = session[:openid_url]
+            = link_to "(Log out)", sessions_path
       =yield

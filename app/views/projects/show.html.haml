@@ -1,10 +1,12 @@
-%h1=h @project.title
+%h1
+  =h @project.title
+  %sup= link_to "(edit)", edit_project_path(@project)
 
 %hr
 .span-8
   = markdown @project.description
 
-.span-8.last
+.span-8
   %p 
     = link_to "Pictures of <em>#{h @project.title}</em> on Flickr.", @project.flickr_url, :class => "photos"
     To add more, tag pictures with
@@ -13,3 +15,5 @@
     $('.photos').attach(FlickrTag,
     = "'" + @project.flickr_tag + "'"
     );
+    
+.span-8.last

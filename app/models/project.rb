@@ -1,6 +1,6 @@
 class Project < ActiveRecord::Base
   validates_uniqueness_of :title
-  
+  validates_presence_of :openid, :title
   has_slug :title, :slug, :always_update => true
   def to_param
     slug
