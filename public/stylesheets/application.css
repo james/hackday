@@ -4,7 +4,11 @@
   font-family:"Gill Sans","Trebuchet MS",Verdana,Arial,Helvetica,sans-serif;
   font-variant:small-caps;
   font-size:2em;
-  padding:0.5em 0;
+}
+
+.header p{
+  padding:0.5em;
+  text-align:right;
 }
 
 ul.flickr_tag_photos{
