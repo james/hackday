@@ -12,4 +12,8 @@ class Project < ActiveRecord::Base
   def flickr_url
     %{http://flickr.com/photos/tags/#{flickr_tag}}
   end
+  
+  def github_json_path
+    "http://github.com/api/v1/json/coupde/ruminant/commits"
+  end
 end

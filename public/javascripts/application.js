@@ -18,3 +18,22 @@ FlickrTag = $.klass({
     });
   }
 });
+
+GithubProjectCommits = $.klass({
+  initialize: function(user_id, repo) {
+    var element = jQuery('<ul class="github_repositories" id="github_repositories_from_'+user_id+'"></ul>');
+    this.element.before(element);
+    element.before('<h4>Recent commits to github:</h4>');
+    $.getJSON("http://github.com/api/v1/json/"+user_id+"/"+repo+"/commits/master?callback=?", function(data){ 
+      $.each(data.commits, function(i, item) { 
+        element.append(
+          '<li>'+
+             '<a href="'+item.url+'">'+
+               item.message+
+             '</a>'+
+           '</li>'
+        );
+      });
+    });
+  }
+});

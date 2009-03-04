@@ -17,3 +17,10 @@
     );
     
 .span-8.last
+  - if @project.github_user && @project.github_repo
+    %p.commits Github account
+    %script
+      $('.commits').attach(GithubProjectCommits,
+      /= @project.github_user + ", " + @project.github_repo
+      'james', 'ruminant' 
+      )
