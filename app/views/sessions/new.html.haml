@@ -4,8 +4,8 @@
     can only be edited by the person with the OpenID
     %em=h @project.openid
 
--form_for :session, @session, :url => sessions_path do |f|
-  =hidden_field_tag 'project', @project.slug
+-form_for :session, @session, :url => session_path do |f|
+  =hidden_field_tag 'project', @project.slug if @project
   %p
     %label
       OpenID URL:
