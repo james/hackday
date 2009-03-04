@@ -25,4 +25,4 @@
 %p
   %label
     OpenID:
-    = form.text_field 'openid'
+    = form.text_field 'openid', :value => session[:openid_url]

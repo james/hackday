@@ -4,8 +4,12 @@
     can only be edited by the person with the OpenID
     %em=h @project.openid
 
--form_for :session, @session, :url => session_path do |f|
+- if params[:new_project]
+  %p Before you create a project, you need to log in using an OpenID, so we know who owns it.
+
+-form_for :session, @session, :url => session_path(:after_openid => "QWHEJQWEHJWQHE") do |f|
   =hidden_field_tag 'project', @project.slug if @project
+  =hidden_field_tag 'new_project', true if params[:new_project]
   %p
     %label
       OpenID URL:

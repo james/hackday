@@ -13,10 +13,10 @@
     .container
       .header
         %p Rewired State project archive
-        - if session[:openid_url]
-          %p
-            Logged in as
-            = session[:openid_url]
-            - form_tag session_path, :method => :delete do
-              = submit_tag 'logout'
+      - if session[:openid_url]
+        %p
+          Logged in as
+          = session[:openid_url]
+          - form_tag session_path, :method => :delete do
+            = submit_tag 'logout'
       =yield
