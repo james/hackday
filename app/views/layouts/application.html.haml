@@ -12,7 +12,7 @@
   %body
     .container
       .header
-        %p Rewired State project archive
+        %p= link_to "Rewired State project archive", projects_path
       - if session[:openid_url]
         %p
           Logged in as
