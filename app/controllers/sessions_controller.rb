@@ -28,6 +28,6 @@ class SessionsController < ApplicationController
   
   def destroy
     session[:openid_url] = nil
-    redirect_to '/projects'
+    redirect_to '/'
   end
 end
