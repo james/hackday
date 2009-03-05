@@ -13,7 +13,7 @@ class Project < ActiveRecord::Base
     %{http://flickr.com/photos/tags/#{flickr_tag}}
   end
   
-  def github_json_path
-    "http://github.com/api/v1/json/coupde/ruminant/commits"
+  def github_path
+    "http://github.com/coupde/ruminant"
   end
 end

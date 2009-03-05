@@ -18,7 +18,8 @@
     
 .span-8.last
   - if @project.github_user && @project.github_repo
-    %p.commits Github account
+    %p.commits
+      %a= link_to "View and contribute to the code base at the github account", @project.github_path
     %script
       $('.commits').attach(GithubProjectCommits,
       /= @project.github_user + ", " + @project.github_repo
