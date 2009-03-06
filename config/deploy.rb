@@ -15,7 +15,7 @@ set :deploy_to, "/var/www/#{application}"
 # set :scm, :subversion
 set :scm_user, 'james'
 default_run_options[:pty] = true
-set :repository,  "git@github.com:james/#{application}.git"
+set :repository,  "git://github.com/james/#{application}.git"
 set :scm, "git"
 #set :user, "deployer"
 
