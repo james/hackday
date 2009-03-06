@@ -4,14 +4,13 @@ class SessionsController < ApplicationController
   end
   
   def create
-    session[:project] = params[:project]
-    session[:new_project] = params[:new_project]
-    # session.close
-    #FIXME: Aarrrgh, why does this not save to session?
+    session[:project] ||= params[:project]
+    session[:new_project] ||= params[:new_project]
+
     authenticate_with_open_id(nil) do |result, identity_url|
       if result.successful?
         session[:openid_url] = identity_url
-        if project = Project.find_by_openid(session[:project])
+        if project = Project.find_by_slug(session[:project])
           session[:project] = nil
           redirect_to edit_project_path(project)
         elsif session[:new_project]
