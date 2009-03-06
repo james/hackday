@@ -1,5 +1,13 @@
-%ul
-  - @projects.each do |project|
-    %li= link_to h(project.title), project_path(project)
+.span-12
+  %ul
+    - @projects.each do |project|
+      %li= link_to h(project.title), project_path(project)
+  
+  = link_to "Add your project", new_project_path
 
-= link_to "Add your project", new_project_path
+.span-12.last
+
+  %h4.tweets
+    %a{:href => "http://search.twitter.com/search?q=%22Rewired+State%22+OR+rewiredstate"} Recent Twitter messages:
+  %script
+    $('.tweets').attach(TwitterSearch, '"Rewired+State"+OR+rewiredstate')

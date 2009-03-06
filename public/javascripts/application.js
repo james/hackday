@@ -37,3 +37,22 @@ GithubProjectCommits = $.klass({
     });
   }
 });
+
+TwitterSearch = $.klass({
+  initialize: function(query) {
+    var element = jQuery('<ul class="twitter_search" id="twitter_search_for_'+query+'"></ul>');
+    this.element.after(element);
+    $.getJSON("http://search.twitter.com/search.json?q="+query+"&callback=?", function(data){ 
+      $.each(data.results, function(i, item) { 
+        element.append(
+          '<li class='+item.from_user+'>'+
+             '<a href="http://twitter.com/'+item.from_user+'">'+
+              item.from_user+
+              '</a>: '+
+               item.text+
+           '</li>'
+        );
+      });
+    });
+  }
+});
