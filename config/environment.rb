@@ -28,6 +28,7 @@ Rails::Initializer.run do |config|
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
   config.gem "haml"
+  config.gem "BlueCloth"
   
 
   # Only load the plugins named here, in the order given. By default, all plugins 
