@@ -13,7 +13,6 @@ public/images/uploaded
 public/images/catalogue
 nbproject
 config/ultrasphinx/development.conf
-config/database.yml
 audio
 import
 import.org
@@ -21,3 +20,4 @@ public/images/catalog
 index
 .idea
 *.sqlite3
+config/deploy.rb
