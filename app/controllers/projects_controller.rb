@@ -5,8 +5,8 @@ class ProjectsController < ApplicationController
     actions :all
   end
   
-  before_filter :require_owner, :only => [:edit, :update]
-  before_filter :require_user, :only => [:new, :create]
+  # before_filter :require_owner, :only => [:edit, :update]
+  # before_filter :require_user, :only => [:new, :create]
   before_filter :fetch_svn_commits, :only => :show
   
   def current_object
