@@ -14,6 +14,6 @@ class Project < ActiveRecord::Base
   end
   
   def github_path
-    "http://github.com/coupde/ruminant"
+    "http://github.com/#{github_user}/#{github_repo}"
   end
 end
