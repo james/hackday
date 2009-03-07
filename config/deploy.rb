@@ -2,7 +2,7 @@ set :spinner_user, nil
 set :runner, 'root'
 set :application, "hackday"
 
-ssh_options[:port] = 2222
+# ssh_options[:port] = 2222
 
 set :user, 'root'
 # If you aren't deploying to /u/apps/#{application} on the target
