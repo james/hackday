@@ -313,6 +313,10 @@ class TestController < ActionController::Base
   def render_implicit_js_template_without_layout
   end
 
+  def render_html_explicit_template_and_layout
+    render :template => 'test/render_implicit_html_template_from_xhr_request', :layout => 'layouts/default_html'
+  end
+
   def formatted_html_erb
   end
 
@@ -678,6 +682,14 @@ class TestController < ActionController::Base
     render :partial => "hash_object", :object => {:first_name => "Sam"}
   end
 
+  def partial_with_nested_object
+    render :partial => "quiz/questions/question", :object => Quiz::Question.new("first")
+  end
+
+  def partial_with_nested_object_shorthand
+    render Quiz::Question.new("first")
+  end
+
   def partial_hash_collection
     render :partial => "hash_object", :collection => [ {:first_name => "Pratik"}, {:first_name => "Amy"} ]
   end
@@ -720,6 +732,8 @@ class TestController < ActionController::Base
              "delete_with_js", "update_page", "update_page_with_instance_variables"
 
           "layouts/standard"
+        when "render_implicit_js_template_without_layout"
+          "layouts/default_html"
         when "action_talk_to_layout", "layout_overriding_layout"
           "layouts/talk_from_action"
         when "render_implicit_html_template_from_xhr_request"
@@ -814,6 +828,11 @@ class RenderTest < ActionController::TestCase
 
   def test_do_with_render_text_and_layout
     get :render_text_hello_world_with_layout
+    assert_equal "<html>hello world, I'm here!</html>", @response.body
+  end
+
+  def test_xhr_with_render_text_and_layout
+    xhr :get, :render_text_hello_world_with_layout
     assert_equal "<html>hello world, I'm here!</html>", @response.body
   end
 
@@ -918,11 +937,11 @@ class RenderTest < ActionController::TestCase
   end
 
   def test_attempt_to_access_object_method
-    assert_raises(ActionController::UnknownAction, "No action responded to [clone]") { get :clone }
+    assert_raise(ActionController::UnknownAction, "No action responded to [clone]") { get :clone }
   end
 
   def test_private_methods
-    assert_raises(ActionController::UnknownAction, "No action responded to [determine_layout]") { get :determine_layout }
+    assert_raise(ActionController::UnknownAction, "No action responded to [determine_layout]") { get :determine_layout }
   end
 
   def test_access_to_request_in_view
@@ -1056,6 +1075,11 @@ class RenderTest < ActionController::TestCase
     assert_equal "XHR!\nHello HTML!", @response.body
   end
 
+  def test_should_render_explicit_html_template_with_html_layout
+    xhr :get, :render_html_explicit_template_and_layout
+    assert_equal "<html>Hello HTML!</html>\n", @response.body
+  end
+
   def test_should_implicitly_render_js_template_without_layout
     get :render_implicit_js_template_without_layout, :format => :js
     assert_no_match /<html>/, @response.body
@@ -1149,7 +1173,7 @@ class RenderTest < ActionController::TestCase
   end
 
   def test_bad_render_to_string_still_throws_exception
-    assert_raises(ActionView::MissingTemplate) { get :render_to_string_with_exception }
+    assert_raise(ActionView::MissingTemplate) { get :render_to_string_with_exception }
   end
 
   def test_render_to_string_that_throws_caught_exception_doesnt_break_assigns
@@ -1174,15 +1198,15 @@ class RenderTest < ActionController::TestCase
   end
 
   def test_double_render
-    assert_raises(ActionController::DoubleRenderError) { get :double_render }
+    assert_raise(ActionController::DoubleRenderError) { get :double_render }
   end
 
   def test_double_redirect
-    assert_raises(ActionController::DoubleRenderError) { get :double_redirect }
+    assert_raise(ActionController::DoubleRenderError) { get :double_redirect }
   end
 
   def test_render_and_redirect
-    assert_raises(ActionController::DoubleRenderError) { get :render_and_redirect }
+    assert_raise(ActionController::DoubleRenderError) { get :render_and_redirect }
   end
 
   # specify the one exception to double render rule - render_to_string followed by render
@@ -1463,6 +1487,16 @@ class RenderTest < ActionController::TestCase
     assert_equal "Sam\nmaS\n", @response.body
   end
 
+  def test_partial_with_nested_object
+    get :partial_with_nested_object
+    assert_equal "first", @response.body
+  end
+
+  def test_partial_with_nested_object_shorthand
+    get :partial_with_nested_object_shorthand
+    assert_equal "first", @response.body
+  end
+
   def test_hash_partial_collection
     get :partial_hash_collection
     assert_equal "Pratik\nkitarP\nAmy\nymA\n", @response.body
@@ -1481,7 +1515,7 @@ class RenderTest < ActionController::TestCase
   end
 
   def test_render_missing_partial_template
-    assert_raises(ActionView::MissingTemplate) do
+    assert_raise(ActionView::MissingTemplate) do
       get :missing_partial
     end
   end
@@ -1509,7 +1543,7 @@ class ExpiresInRenderTest < ActionController::TestCase
     assert_equal "max-age=60, private", @response.headers["Cache-Control"]
   end
   
-  def test_expires_in_header
+  def test_expires_in_header_with_public
     get :conditional_hello_with_expires_in_with_public
     assert_equal "max-age=60, public", @response.headers["Cache-Control"]
   end

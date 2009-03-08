@@ -71,7 +71,7 @@ module ActiveRecord
 
   # See ActiveRecord::Associations::ClassMethods for documentation.
   module Associations # :nodoc:
-    # These classes will be loaded when associatoins are created.
+    # These classes will be loaded when associations are created.
     # So there is no need to eager load them.
     autoload :AssociationCollection, 'active_record/associations/association_collection'
     autoload :AssociationProxy, 'active_record/associations/association_proxy'
@@ -1003,9 +1003,7 @@ module ActiveRecord
 
         # Create the callbacks to update counter cache
         if options[:counter_cache]
-          cache_column = options[:counter_cache] == true ?
-            "#{self.to_s.demodulize.underscore.pluralize}_count" :
-            options[:counter_cache]
+          cache_column = reflection.counter_cache_column
 
           method_name = "belongs_to_counter_cache_after_create_for_#{reflection.name}".to_sym
           define_method(method_name) do
