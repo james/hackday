@@ -1,33 +1,43 @@
-%h1
-  =h @project.title
-  %sup= link_to "(edit)", edit_project_path(@project)
-
-%hr
-.span-8
-  = h(@project.description)
-
 .span-8
   %p 
     = link_to "Pictures of <em>#{h @project.title}</em> on Flickr.", @project.flickr_url, :class => "photos"
-    To add more, tag pictures with
+    %br
+    To add more, tag pictures with:
+    %br
     = @project.flickr_tag
   %script
     $('.photos').attach(FlickrTag,
     = "'" + @project.flickr_tag + "'"
     );
+
+.span-16.last
+  %h1
+    =h @project.title
+
+  %h2.alt= link_to h(@project.url), h(@project.url) unless @project.url.blank?
+
+  %hr
+
+  .span-8
+    = markdown @project.description
     
-.span-8.last
-  - if !@project.github_user.blank? && !@project.github_repo.blank?
-    %p.commits
-      %a= link_to "View and contribute to the code base at the github account", @project.github_path
-    %script
-      $('.commits').attach(GithubProjectCommits,
-      = "'#{@project.github_user}', '#{@project.github_repo}'"
-      )
-  - elsif @svn_commits
-    %p.commits
-      %a= link_to "View the code base at the Subversion repository", @project.svn_path
-      %ul
-        - @svn_commits.each do |commit|
-          %li
-            = "#{commit[:revision]}: #{commit[:msg]}"
+  .span-8.last
+    - if !@project.github_user.blank? && !@project.github_repo.blank?
+      %p.commits
+        %a= link_to "View and contribute to the code base at the github account", @project.github_path
+      %script
+        $('.commits').attach(GithubProjectCommits,
+        = "'#{@project.github_user}', '#{@project.github_repo}'"
+        )
+    - elsif @svn_commits
+      %p.commits
+        %a= link_to "View the code base at the Subversion repository", @project.svn_path
+        %ul
+          - @svn_commits.each do |commit|
+            %li
+              = "#{commit[:revision]}: #{commit[:msg]}"
+              %h2.alt= link_to h(@project.url), h(@project.url)
+
+%hr
+
+.span-24= link_to "edit this page", edit_project_path(@project)

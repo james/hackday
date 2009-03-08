@@ -5,7 +5,7 @@ FlickrTag = $.klass({
     var element = jQuery('<ul class="flickr_tag_photos" id="flickr_tag_photos_for_'+tag+'"></ul>');
     this.element.before(element);
     $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?tags="+tag+"&format=json&jsoncallback=?", function(data){ 
-      $.each(data.items.slice(0,5), function(i, item) { 
+      $.each(data.items.slice(0,10), function(i, item) { 
         element.append(
           '<li>'+
             '<a href="'+item.link+'">'+
@@ -52,7 +52,7 @@ TwitterSearch = $.klass({
     var element = jQuery('<ul class="twitter_search" id="twitter_search_for_'+query+'"></ul>');
     this.element.after(element);
     $.getJSON("http://search.twitter.com/search.json?q="+query+"&callback=?", function(data){ 
-      $.each(data.results, function(i, item) { 
+      $.each(data.results.slice(0,10), function(i, item) { 
         element.append(
           '<li class='+item.from_user+'>'+
              '<a href="http://twitter.com/'+item.from_user+'">'+

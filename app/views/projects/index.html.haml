@@ -11,16 +11,22 @@
         %script
           = "$('.#{h(project.slug)}').attach(FirstFlickrTag, '#{project.flickr_tag}');"
   
-  %hr
+      %hr
   
   .new_project_link.span-8= link_to "Add your project", new_project_path
 
 .span-8
-  %p .
+  %h2.alt
+    Thank you all so much for coming
+  
+  <embed src="http://blip.tv/play/AfHgG5TQOg" type="application/x-shockwave-flash" width="100%" height="260" allowscriptaccess="always" allowfullscreen="true"></embed>
+  
+  %blockquote{:cite => "http://twitter.com/leftback/statuses/1296615025"}
+    %h3.alt "Amazed at quality of projects"
 
 .span-8.last
   %h2.tweets
     Recent Twitter messages
-  %a{:href => "http://search.twitter.com/search?q=%22Rewired+State%22+OR+rewiredstate"} View these at search.twitter.com
+  %a{:href => "http://search.twitter.com/search?q=%22Rewired+State%22+OR+rewiredstate"} View all mentions of Rewired State on twitter
   %script
     $('.tweets').attach(TwitterSearch, '"Rewired+State"+OR+rewiredstate')
