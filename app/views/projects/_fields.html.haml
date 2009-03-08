@@ -1,28 +1,35 @@
 %p
   %label
-    Title:
+    .span-4
+      Title:
     = form.text_field 'title'
 %p
   %label
-    Description:
+    .span-4
+      Description:
     = form.text_area 'description'
 %p
   %label
-    URL:
+    .span-4
+      URL:
     = form.text_field 'url'
 %p
   %label
-    Github User Name:
+    .span-4
+      Github User Name:
     = form.text_field 'github_user'
 %p
   %label
-    Github Repository Name:
+    .span-4
+      Github Repository Name:
     = form.text_field 'github_repo'
 %p
   %label
-    Subversion path:
+    .span-4
+      Subversion path:
     = form.text_field 'svn_path'
 %p
   %label
-    OpenID:
+    .span-4
+      OpenID:
     = form.text_field 'openid', :value => session[:openid_url]

@@ -1,3 +1,4 @@
 - form_for @project do |form|
+  = error_messages_for :project
   = form_fields form
   = form.submit "Create project"
