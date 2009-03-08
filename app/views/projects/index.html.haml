@@ -1,13 +1,26 @@
-.span-12
-  %ul
+.span-8
+  %h2 The hacks
+  %ul.hacks
     - @projects.each do |project|
-      %li= link_to h(project.title), project_path(project)
+      %li.span-8
+        .span-2{:class => h(project.slug)}
+          %img{:src => "http://s3.amazonaws.com/twitter_production/profile_images/66680232/rs_bigger.png"}
+        .span-6.last
+          %h3= link_to h(project.title), project_path(project)
+          %p= truncate(project.description, 100)
+        %script
+          = "$('.#{h(project.slug)}').attach(FirstFlickrTag, '#{project.flickr_tag}');"
   
-  = link_to "Add your project", new_project_path
+  %hr
+  
+  .new_project_link.span-8= link_to "Add your project", new_project_path
 
-.span-12.last
+.span-8
+  %p .
 
-  %h4.tweets
-    %a{:href => "http://search.twitter.com/search?q=%22Rewired+State%22+OR+rewiredstate"} Recent Twitter messages:
+.span-8.last
+  %h2.tweets
+    Recent Twitter messages
+  %a{:href => "http://search.twitter.com/search?q=%22Rewired+State%22+OR+rewiredstate"} View these at search.twitter.com
   %script
     $('.tweets').attach(TwitterSearch, '"Rewired+State"+OR+rewiredstate')

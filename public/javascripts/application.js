@@ -2,7 +2,6 @@
 // This file is automatically included by javascript_include_tag :defaults
 FlickrTag = $.klass({
   initialize: function(tag) {
-    console.info("asddasa");
     var element = jQuery('<ul class="flickr_tag_photos" id="flickr_tag_photos_for_'+tag+'"></ul>');
     this.element.before(element);
     $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?tags="+tag+"&format=json&jsoncallback=?", function(data){ 
@@ -15,6 +14,16 @@ FlickrTag = $.klass({
           '</li>'
         );
       });
+    });
+  }
+});
+
+FirstFlickrTag = $.klass({
+  initialize: function(tag) {
+    var element = this.element;
+    $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?tags="+tag+"&format=json&jsoncallback=?", function(data){ 
+      item = data.items[0];
+      element.html('<img src="'+item.media.m.replace(/_m.jpg$/, "_s.jpg")+'" alt="'+item.title+'" />');
     });
   }
 });

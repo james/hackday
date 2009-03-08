@@ -20,6 +20,19 @@
   text-decoration:underline;
 }
 
+ul.hacks{
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+ul.hacks img{
+  width:100%;
+}
+
+.new_project_link{
+  text-align: center;
+}
+
 .twitter_search .rewiredstate{
   background-color:#DF4141;
   color:#FFFFFF;
