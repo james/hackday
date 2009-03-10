@@ -52,6 +52,9 @@ ul.hacks img{
   width:100%;
   margin-bottom:1em;
 }
+ul.hacks li div{
+  height:9em;
+}
 
 .new_project_link{
   text-align: center;

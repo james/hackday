@@ -7,7 +7,7 @@
           %img{:src => "http://s3.amazonaws.com/twitter_production/profile_images/66680232/rs_bigger.png"}
         .span-6.last
           %h3= link_to h(project.title), project_path(project)
-          %p= truncate(project.description, 100)
+          %p= truncate(h(project.description), 100)
 
 %hr
 
