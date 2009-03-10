@@ -1,0 +1,49 @@
+/ %h2 Rewired State: National Hack The Government Day
+
+.span-11.colborder
+  %p On Saturday March 7th 2009 Rewired State held "<strong>National Hack The Government Day</strong>" at the new Guardian offices in Kings Cross. <strong>80 developers</strong> created <strong>working projects</strong> from <strong>public sector information</strong> between <strong>10am to 6pm</strong>, and presenting them to government officials and the media in the evening, before heading to the pub.
+
+  %p 
+    <strong>Over 30 hacks</strong> were created, from fully working sites to groundwork to much bigger projects.
+    =link_to "Job Centre Pro Plus", project_path('job-centre-pro-plus')
+    was a clean rewrite of the Job Centre Plus government website, allowing job seekers to quickly and easily find jobs by keyword within their local area, and subscribe to email alerts to future additions. Along the same lines, there was a
+    =link_to "rewrite of the official Active Places", project_path('active-places')
+    website, which in 8 hours, 3 developers had been able to create a much better website that cost the government over £5m to build, and added accessibility and mobile support.
+
+  %p
+    = link_to "Companies Open House", project_path('companies-open-house')
+    made a big dent in the very painful process of making registered (and public) details of UK companies more accessible and hackable.
+    = link_to "Fix My Site", project_path('fixmysite')
+    provides a nice way of providing feedback on public sector websites, so we can all help them improve.
+  
+  %p <em>Job Centre Pro Plus</em> and <em>Companies Open House</em> each got a <strong>Rewired State prize</strong>, <em>Fix My Site</em> won a special prize.
+  
+  %p <em>DirectGov Innovations</em> were so impressed by the hacks, that they have <strong>offered support to 4 of the projects</strong>, and <em>4ip</em> sprung into action and are now in talks with 3 of the projects about <strong>funding further development</strong>.
+
+  %p
+    And there was so much more, more than I can write here. But not more than other people can write. Have a look at our
+    = link_to "buzz page", pages_path(:action => "buzz")
+    for more.
+
+.span-12.last
+  .span-5.colborder
+    %h3 
+      = Project.count
+      hacks and counting...
+    %p= link_to "View details on all submitted projects made for Rewired State", projects_path
+    
+  
+  .span-6.last
+    %h3 The hype
+    
+    %p= link_to "We're collected all the articles, blogs, tweets and photos", pages_path(:action => "buzz")
+      
+
+  %hr
+
+  .presentation_videos
+    <embed width="470" height="250" flashvars="toJSONString=function () {
+    return s.object(this);
+    }" tojsonstring="function () {
+    return s.object(this);
+    }" allowscriptaccess="always" allowfullscreen="true" quality="high" bgcolor="#000000" name="showplayer1" id="showplayer1" style="" src="http://e.blip.tv/scripts/flash/showplayer.swf?autostart=false&amp;backcolor=0xFFFFFF&amp;lightcolor=0xAAAAAA&amp;frontcolor=0x999999&amp;showplaylist=true&amp;enablejs=true&amp;showplayerpath=http://e.blip.tv/scripts/flash/showplayer.swf&amp;file=http://rewiredstate.blip.tv/rss/flash/?referrer=rewiredstate.blip.tv" type="application/x-shockwave-flash"/>

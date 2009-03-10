@@ -1,42 +1,18 @@
-.span-8
-  %h2 The hacks
-  %ul.hacks
-    - @projects.each do |project|
-      %li.span-8
+%h3 The hacks
+%ul.hacks
+  - @projects.each_with_index do |project, count|
+    %li
+      %div{:class => "span-8 #{cycle("", "", " last")}"}
         .span-2{:class => h(project.slug)}
           %img{:src => "http://s3.amazonaws.com/twitter_production/profile_images/66680232/rs_bigger.png"}
         .span-6.last
           %h3= link_to h(project.title), project_path(project)
           %p= truncate(project.description, 100)
-        %script
-          = "$('.#{h(project.slug)}').attach(FirstFlickrTag, '#{project.flickr_tag}');"
-  
-      %hr
-  
-  .new_project_link.span-8= link_to "Add your project", new_project_path
 
-.span-8
-  %h2.alt
-    Thank you all so much for coming
-  
-  <embed src="http://blip.tv/play/AfHgG5TQOg" type="application/x-shockwave-flash" width="100%" height="260" allowscriptaccess="always" allowfullscreen="true"></embed>
-  
-  
-  %blockquote{:cite => "http://twitter.com/tom_watson/statuses/1299610382"}
-    %h3.alt "Want to see British talent? Look at the list of projects created at Rewired State. Simply extraordinary."
-    %p.cite Tom Watson MP - Minister for Digital Engagement
-  
-  %blockquote{:cite => "http://twitter.com/leftback/statuses/1296615025"}
-    %h3.alt "Amazed at quality of projects"
-    %p.cite Mike Bracken - Head of digital development at Guardian News & Media
-  
-  %blockquote{:cite => "http://ddinsdale.wordpress.com/2009/03/08/hello-world/"}
-    %h3.alt "We have assumed that no one is that interested.  I will need to re-vist that."
-    %p.cite David Dinsdale - Programme Director of businesslink.gov.uk
+%hr
 
-.span-8.last
-  %h2.tweets
-    Recent Twitter messages
-  %a{:href => "http://search.twitter.com/search?q=%22Rewired+State%22+OR+rewiredstate"} View all mentions of Rewired State on twitter
-  %script
-    $('.tweets').attach(TwitterSearch, '"Rewired+State"+OR+rewiredstate')
+%p.new_project_link= link_to "Add your project", new_project_path  
+  
+%script
+  - @projects.each do |project|
+    = "$('.#{h(project.slug)}').attach(FirstFlickrTag, '#{project.flickr_tag}');"

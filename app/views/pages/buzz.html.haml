@@ -1,8 +1,37 @@
 .span-8
-  %h2 Our favourite Blog entries
+  %h3 Our favourite Blog entries
+  %a.links{:href => "http://delicious.com/rewiredstate"} All links are on Delicious
     
-  
-  %h2 Our favourite tweets
-  
 .span-16.last
-  %h2 Photos of the day
+  .span-7.colborder
+    %h3 Some quotes
+    %blockquote{:cite => "http://twitter.com/tom_watson/statuses/1299610382"}
+      %h3.alt "Want to see British talent? Look at the list of projects created at Rewired State. Simply extraordinary."
+      %p.cite Tom Watson MP - Minister for Digital Engagement
+    
+    %blockquote{:cite => "http://twitter.com/leftback/statuses/1296615025"}
+      %h3.alt "Amazed at quality of projects"
+      %p.cite Mike Bracken - Head of digital development at Guardian News & Media
+    
+    %blockquote{:cite => "http://ddinsdale.wordpress.com/2009/03/08/hello-world/"}
+      %h3.alt "We have assumed that no one is that interested.  I will need to re-vist that."
+      %p.cite David Dinsdale - Programme Director of businesslink.gov.uk
+  
+  .span-8.last
+    %h3.tweets
+      Latest Twitter messages
+    %p
+      %a{:href => "http://search.twitter.com/search?q=%22Rewired+State%22+OR+rewiredstate"} View all mentions of Rewired State on twitter
+    %script
+      $('.tweets').attach(TwitterSearch, '"Rewired+State"+OR+rewiredstate')
+  
+  %hr
+  %h3 Latest photos from the day
+  
+  %p.photos
+    = link_to "Pictures of <em>rewiredstate</em> on Flickr.", "http://flickr.com/photos/tags/rewiredstate"
+    
+  %script
+    $('.photos').attach(RewiredStatePhotos);
+    $('.links').attach(Delicious, 'rewiredstate');
+    

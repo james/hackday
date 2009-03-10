@@ -3,6 +3,7 @@
   color:#FFFFFF;
   font-family:"Gill Sans","Trebuchet MS",Verdana,Arial,Helvetica,sans-serif;
   font-variant:small-caps;
+  margin-bottom:2em;
 }
 .header p{
   padding:1em;
@@ -27,6 +28,19 @@
 }
 .header ul li.current a{
   text-decoration: underline;
+}
+
+hr{
+  color:#DF4141;
+  background-color:#DF4141;
+}
+
+div.colborder, hr{
+  border-color:#DF4141;
+}
+
+.presentation_videos{
+  margin-bottom:2em;
 }
 
 ul.hacks{
