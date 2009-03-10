@@ -51,6 +51,12 @@
             %li
               = "#{commit[:revision]}: #{commit[:msg]}"
               %h3.alt= link_to h(@project.url), h(@project.url)
+    - elsif !@project.code_url.blank?
+      %p
+        The code for this project is held at
+        = link_to @project.code_url, @project.code_url
+    - else
+      %p This project has not provided a source code location
 
 %hr
 
