@@ -12,7 +12,11 @@
   %body
     .container
       .header
-        %p= link_to "Rewired State project archive", projects_path
+        %p= link_to "Rewired State", pages_path
+        %ul.menu
+          %li= link_to "Home", pages_path
+          %li{:class => ("current" if controller_name == "projects")}= link_to "Projects", projects_path
+          %li{:class => ("current" if action_name == "buzz")}= link_to "Buzz", pages_path(:action => 'buzz')
       - if session[:openid_url]
         %p
           Logged in as

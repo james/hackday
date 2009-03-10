@@ -3,14 +3,12 @@
   color:#FFFFFF;
   font-family:"Gill Sans","Trebuchet MS",Verdana,Arial,Helvetica,sans-serif;
   font-variant:small-caps;
-  font-size:2em;
 }
-
 .header p{
-  padding:0.5em;
-  text-align:right;
+  padding:1em;
+  padding-bottom:0;
+  margin:0;
 }
-
 .header a{
   color:#FFFFFF;
   text-decoration:none;
@@ -18,6 +16,17 @@
 .header a:hover{
   color:#FFFFFF;
   text-decoration:underline;
+}
+.header ul{
+  margin:0.25em 0.5em;
+  font-size:1.5em;
+}
+.header ul li{
+  list-style:none;
+  display:inline;
+}
+.header ul li.current a{
+  text-decoration: underline;
 }
 
 ul.hacks{
