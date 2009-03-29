@@ -17,6 +17,8 @@
           %li= link_to "Home", pages_path
           %li{:class => ("current" if controller_name == "projects")}= link_to "Projects", projects_path
           %li{:class => ("current" if action_name == "buzz")}= link_to "Buzz", pages_path(:action => 'buzz')
+          %li= link_to "Join in", pages_path(:action => "joinin")
+          
       - if session[:openid_url]
         %p
           Logged in as
