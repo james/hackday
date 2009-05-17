@@ -2,7 +2,7 @@
 %ul.hacks
   - @projects.each_with_index do |project, count|
     %li
-      %div{:class => "span-8 #{cycle("", "", " last")}"}
+      %div{:class => "span-10 #{cycle(""," last")}"}
         .span-2{:class => h(project.slug)}
           %img{:src => "http://s3.amazonaws.com/twitter_production/profile_images/66680232/rs_bigger.png"}
         .span-6.last

@@ -11,13 +11,23 @@
     = javascript_include_tag 'jquery', 'lowpro.jquery', 'application'
   %body
     .container
-      .header
-        %p= link_to "Rewired State", pages_path
-        %ul.menu
-          %li= link_to "Home", pages_path
-          %li{:class => ("current" if controller_name == "projects")}= link_to "Projects", projects_path
-          %li{:class => ("current" if action_name == "buzz")}= link_to "Buzz", pages_path(:action => 'buzz')
-          %li= link_to "Join in", pages_path(:action => "joinin")
+      .span-4
+        %p
+      .header.span-20.last
+        %h1
+          = link_to "Rewired State", pages_path
+      %hr
+      
+      .nav.span-4
+        %ul
+          %li= link_to "About", pages_path
+          %li= link_to "Hack Day 1", pages_path(:action => 'hackthegovday'), :class => ("current" if action_name == "hackthegovday")
+          %li= link_to "Hack Day Teen", pages_path(:action => 'hackthegovdayteen'), :class => ("current" if action_name == "hackthegovdayteen")
+          %li= link_to "API wiki", "http://wiki.rewiredstate.org/?page=APIs"
+          %li= link_to "Creations", projects_path, :class => ("current" if controller_name == "projects")
+          %li= link_to "Blog", "http://blog.rewiredstate.org"
+          %li= link_to "Buzz", pages_path(:action => 'buzz'), :class => ("current" if action_name == "buzz")
+          %li= link_to "Join In", pages_path(:action => "joinin"), :class => ("current" if action_name == "joinin")
           
       - if session[:openid_url]
         %p
@@ -25,4 +35,4 @@
           = session[:openid_url]
           - form_tag session_path, :method => :delete do
             = submit_tag 'logout'
-      =yield
+      .content.span-20.last=yield

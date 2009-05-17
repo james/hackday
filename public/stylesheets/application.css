@@ -1,4 +1,4 @@
-.header{
+/*.header{
   background-color:#DF4141;
   color:#FFFFFF;
   font-family:"Gill Sans","Trebuchet MS",Verdana,Arial,Helvetica,sans-serif;
@@ -17,18 +17,7 @@
 .header a:hover{
   color:#FFFFFF;
   text-decoration:underline;
-}
-.header ul{
-  margin:0.25em 0.5em;
-  font-size:1.5em;
-}
-.header ul li{
-  list-style:none;
-  display:inline;
-}
-.header ul li.current a{
-  text-decoration: underline;
-}
+}*/
 
 hr{
   color:#DF4141;
