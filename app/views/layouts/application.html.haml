@@ -23,6 +23,7 @@
           %li= link_to "About", pages_path
           %li= link_to "Hack Day 1", pages_path(:action => 'hackthegovday'), :class => ("current" if action_name == "hackthegovday")
           %li= link_to "Hack Day Teen", pages_path(:action => 'hackthegovdayteen'), :class => ("current" if action_name == "hackthegovdayteen")
+          %li= link_to "Hack Day Parliament", pages_path(:action => 'parliament'), :class => ("current" if action_name == "hackthegovdayteen")
           %li= link_to "API wiki", "http://wiki.rewiredstate.org/?page=APIs"
           %li= link_to "Creations", projects_path, :class => ("current" if controller_name == "projects")
           %li= link_to "Blog", "http://blog.rewiredstate.org"
