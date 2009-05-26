@@ -9,31 +9,23 @@
     <![endif]-->
     = stylesheet_link_tag 'application'
     = javascript_include_tag 'jquery', 'lowpro.jquery', 'application'
-  %body
-    .container
-      .span-4
-        %p mid-redesign
-      .header.span-20.last
-        %h1
-          = link_to "Rewired State", pages_path
-      %hr
-      
-      .nav.span-4
-        %ul
-          %li= link_to "About", pages_path
-          %li= link_to "Hack Day 1", pages_path(:action => 'hackthegovday'), :class => ("current" if action_name == "hackthegovday")
-          %li= link_to "Hack Day Teen", pages_path(:action => 'hackthegovdayteen'), :class => ("current" if action_name == "hackthegovdayteen")
-          %li= link_to "Hack Day Parliament", pages_path(:action => 'parliament'), :class => ("current" if action_name == "hackthegovdayteen")
-          %li= link_to "API wiki", "http://wiki.rewiredstate.org/?page=APIs"
-          %li= link_to "Creations", projects_path, :class => ("current" if controller_name == "projects")
-          %li= link_to "Blog", "http://blog.rewiredstate.org"
-          %li= link_to "Buzz", pages_path(:action => 'buzz'), :class => ("current" if action_name == "buzz")
-          %li= link_to "Join In", pages_path(:action => "joinin"), :class => ("current" if action_name == "joinin")
-          
-      - if session[:openid_url]
-        %p
-          Logged in as
-          = session[:openid_url]
-          - form_tag session_path, :method => :delete do
-            = submit_tag 'logout'
-      .content.span-20.last=yield
+  %body{:class => "#{controller.controller_name} #{controller.action_name}"}
+    .header
+      %h1
+        = link_to image_tag('logo.png'), pages_path
+  
+    .container                      
+      .content.clearfix=yield
+    
+    .footer
+      %ul
+        %li= link_to "About", pages_path
+        %li= link_to "Hack Day 1", pages_path(:action => 'hackthegovday'), :class => ("current" if action_name == "hackthegovday")
+        %li= link_to "Hack Day Teen", pages_path(:action => 'hackthegovdayteen'), :class => ("current" if action_name == "hackthegovdayteen")
+        %li= link_to "Hack Day Parliament", pages_path(:action => 'parliament'), :class => ("current" if action_name == "hackthegovdayteen")
+        %li= link_to "API wiki", "http://wiki.rewiredstate.org/?page=APIs"
+        %li= link_to "Creations", projects_path, :class => ("current" if controller_name == "projects")
+        %li= link_to "Blog", "http://blog.rewiredstate.org"
+        %li= link_to "Buzz", pages_path(:action => 'buzz'), :class => ("current" if action_name == "buzz")
+        %li= link_to "Join In", pages_path(:action => "joinin"), :class => ("current" if action_name == "joinin")
+  
