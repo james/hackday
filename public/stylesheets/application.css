@@ -155,6 +155,8 @@ ul.nav li a.current,
 ul.nav li a:hover {
   color:#fff;
   border-top: 3px solid #E3433A;
+  position:relative;
+  top:-3px;
 }
 
 .main_content {

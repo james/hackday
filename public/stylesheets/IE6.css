@@ -1,5 +1,3 @@
 ul.nav li a.current,
 ul.nav li a:hover {
-  position:relative;
-  top:-3px;
 }
