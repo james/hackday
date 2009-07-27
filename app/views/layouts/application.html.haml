@@ -3,6 +3,8 @@
   %head
     %title Rewired State Projects
     = stylesheet_link_tag 'application'
+    /[if IE 6]
+      = stylesheet_link_tag 'IE6'
     = javascript_include_tag 'jquery', 'lowpro.jquery', 'application'
   %body{:class => "#{controller.controller_name} #{controller.action_name}"}
     .header

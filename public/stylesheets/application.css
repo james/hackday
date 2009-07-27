@@ -71,6 +71,7 @@ p{
 blockquote {
   background: transparent url('/images/quote_open.png') left top no-repeat;
   margin-bottom:55px;
+  position: relative
 }
 blockquote h3 {
   padding: 0 48px;
@@ -137,7 +138,7 @@ ul.nav {
 }
 
 ul.nav li {
-  display:inline-block;
+  float:left;
   margin-left:40px;
 }
 
@@ -147,6 +148,7 @@ ul.nav li a{
   font-weight:100;
   text-decoration: none;
   padding-top:4px;
+  display:block;
 }
 
 ul.nav li a.current,
