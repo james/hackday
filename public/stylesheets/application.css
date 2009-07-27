@@ -17,9 +17,6 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	vertical-align: baseline;
 	background: transparent;
 }
-body {
-	line-height: 1;
-}
 ol, ul {
 	list-style: none;
 }
@@ -50,6 +47,55 @@ table {
 body {
   margin:0;
   padding:0;
+  color:#444444;
+  font: 18px Georgia, serif;
+  font-weight:100;
+  word-spacing: -1px;
+  line-height: 1.4;
+}
+
+a {
+  color:#E3433A;
+  text-decoration:none;
+}
+
+a:hover {
+  color:#E3433A;
+  text-decoration:underline;
+}
+
+blockquote {
+  background: transparent url('/images/quote_open.png') left top no-repeat;
+  margin-bottom:40px;
+}
+blockquote h3 {
+  padding: 0 48px;
+  background: transparent url('/images/quote_close.png') right bottom no-repeat;
+  font-family: "Gill Sans Light","GillSans-Light", "Gill Sans", "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+  font-size:1.8em;
+  font-weight:100;
+  color:#181818;
+}
+blockquote .cite {
+  margin-top:1em;
+  padding-left:48px;
+}
+
+h2 {
+  font-family: "Gill Sans Light","GillSans-Light", "Gill Sans", "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+  font-size:1.8em;
+  font-weight:100;
+  border-left: 3px solid #E3433A;
+  padding-left: 15px;
+  margin-bottom:20px;
+}
+
+ul {
+  margin: 0 20px;
+}
+
+ul li {
+  padding-bottom: 1em;
 }
 
 .header_inner,
@@ -64,8 +110,8 @@ body {
   padding:13px 0 16px 0;
   background-color: #181818;
   border-bottom:3px solid #E3433A;
+  margin-bottom:35px;
 }
-
 
 .header h1 {
   width:354px;
@@ -75,23 +121,34 @@ ul.nav {
   position:absolute;
   top:67px;
   right:0;
+  margin:0;
 }
 
 ul.nav li {
   display:inline-block;
+  margin-left:40px;
 }
 
 ul.nav li a{
   color:#E3433A;
-  font: 1em "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+  font: 1em "Gill Sans Light","GillSans-Light", "Gill Sans", "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+  font-weight:100;
   text-decoration: none;
-  margin-right:30px;
   padding-top:4px;
 }
 
 ul.nav li a.current,
 ul.nav li a:hover {
   color:#fff;
-  margin-right:30px;
   border-top: 3px solid #E3433A;
+}
+
+.main_content {
+  margin-right:32%;
+}
+
+.sub_content {
+  position:absolute;
+  top:0;
+  right:0;
 }

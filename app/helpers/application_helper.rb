@@ -3,4 +3,5 @@ module ApplicationHelper
   def form_fields(form, args={})
     render({:partial => 'fields', :locals => {:form => form}}.merge(args))
   end
+  
 end

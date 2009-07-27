@@ -113,3 +113,15 @@ Delicious = $.klass({
     });
   }
 });
+
+SlideShow = $.klass({
+  initialize: function() {
+    // TODO: Quote slideshow
+    this.element.children().hide();
+    this.element.children(":first").show();
+  }
+});
+
+jQuery(function($) {
+  $(".slide_quote").attach(SlideShow);
+});
