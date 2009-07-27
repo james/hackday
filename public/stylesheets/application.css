@@ -64,9 +64,13 @@ a:hover {
   text-decoration:underline;
 }
 
+p{
+  margin-bottom:1em;
+}
+
 blockquote {
   background: transparent url('/images/quote_open.png') left top no-repeat;
-  margin-bottom:40px;
+  margin-bottom:55px;
 }
 blockquote h3 {
   padding: 0 48px;
@@ -90,6 +94,10 @@ h2 {
   margin-bottom:20px;
 }
 
+.sub_content h2 {
+  border:none;
+}
+
 ul {
   margin: 0 20px;
 }
@@ -97,6 +105,10 @@ ul {
 ul li {
   padding-bottom: 1em;
 }
+
+
+/* PAGE LAYOUT */
+
 
 .header_inner,
 .container .content {
@@ -151,4 +163,13 @@ ul.nav li a:hover {
   position:absolute;
   top:0;
   right:0;
+  width:30%;
+}
+
+/* PAGE SPECIFIC STYLES */
+
+ul.flickr_tag_photos li{
+  display:inline;
+  margin:0;
+  padding:0;
 }

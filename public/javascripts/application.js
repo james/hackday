@@ -33,7 +33,7 @@ RewiredStatePhotos = $.klass({
     var element = jQuery('<ul class="flickr_tag_photos" id="flickr_tag_photos_for_rewiredstate"></ul>');
     this.element.before(element);
     $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?tags=rewiredstate&format=json&jsoncallback=?", function(data){ 
-      $.each(data.items.slice(0,16), function(i, item) {
+      $.each(data.items.slice(0,18), function(i, item) {
         element.append(
           '<li>'+
             '<a href="'+item.link+'">'+
