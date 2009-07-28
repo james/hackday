@@ -108,7 +108,8 @@ h2 {
   margin-right:24px;
 }
 
-.sub_content {
+.sub_content,
+.sub_text {
   font-size:14px;
 }
 
@@ -209,4 +210,11 @@ ul.flickr_tag_photos li img{
 .body_image {
   float:right;
   margin-right:24px;
+}
+
+.show_link {
+  padding: 5px 25px;
+  background-image: url('/images/red_play.png');
+  background-position: left center;
+  background-repeat: no-repeat;
 }

@@ -127,7 +127,10 @@ ShowHideSection = $.klass({
     this.element.find(".show_content").hide();
   },
   onclick: $.delegate({
-    ".show_link": function() { this.element.find(".show_content").toggle(); },
+    ".show_link": function() {
+      this.element.find(".show_content").toggle();
+      return false;
+    },
   }),
   
 });
