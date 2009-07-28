@@ -122,6 +122,18 @@ SlideShow = $.klass({
   }
 });
 
+ShowHideSection = $.klass({
+  initialize: function() {
+    this.element.find(".show_content").hide();
+  },
+  onclick: $.delegate({
+    ".show_link": function() { this.element.find(".show_content").toggle(); },
+  }),
+  
+});
+
 jQuery(function($) {
   $(".slide_quote").attach(SlideShow);
+  $(".show_hide_section").attach(ShowHideSection);
+  
 });
