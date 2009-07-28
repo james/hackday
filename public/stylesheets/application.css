@@ -205,3 +205,8 @@ ul.flickr_tag_photos li{
 ul.flickr_tag_photos li img{
   width:71px;
 }
+
+.body_image {
+  float:right;
+  margin-right:24px;
+}
