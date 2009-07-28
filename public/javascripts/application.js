@@ -3,13 +3,13 @@
 FlickrTag = $.klass({
   initialize: function(tag, size) {
     var element = jQuery('<ul class="flickr_tag_photos" id="flickr_tag_photos_for_'+tag+'"></ul>');
-    this.element.before(element);
+    this.element.after(element);
     $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?tags="+tag+"&format=json&jsoncallback=?", function(data){ 
       $.each(data.items.slice(0,10), function(i, item) {
         element.append(
           '<li>'+
             '<a href="'+item.link+'">'+
-              '<img src="'+item.media.m.replace(/_m.jpg$/, ".jpg")+'" alt="'+item.title+'" />' +
+              '<img src="'+item.media.m.replace(/_m.jpg$/, "_s.jpg")+'" alt="'+item.title+'" />' +
             '</a>'+
           '</li>'
         );

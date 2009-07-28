@@ -1,18 +1,37 @@
-.span-24.last
-  %h1
+.main_content
+  %h2
     =h @project.title
 
-  %h2.alt= link_to h(@project.url), h(@project.url) unless @project.url.blank?
+  = markdown @project.description
 
   %hr
 
-.span-8
-  - unless @project.bliptv_id.blank?
-    %embed{:src => "http://blip.tv/play/#{@project.bliptv_id}", :type => "application/x-shockwave-flash", :width => "100%", :height => "230", :allowscriptaccess => "always", :allowfullscreen => "true"}
+  %p.alt= link_to h(@project.url), h(@project.url) unless @project.url.blank?
 
-  %p 
-    = link_to "Pictures of <em>#{h @project.title}</em> on Flickr.", @project.flickr_url, :class => "photos"
-    %br
+  %p.code_link
+    - if !@project.github_user.blank? && !@project.github_repo.blank?
+      %a= link_to @project.github_path, @project.github_path
+    - elsif @svn_commits
+      %a= link_to @project.svn_path, @project.svn_path
+    - elsif !@project.code_url.blank?
+      = link_to @project.code_url, @project.code_url
+  
+  %hr
+  
+  - unless @project.bliptv_id.blank?
+
+    %h2 Demonstration
+    %embed{:src => "http://blip.tv/play/#{@project.bliptv_id}", :type => "application/x-shockwave-flash", :width => "648px", :height => "460px", :allowscriptaccess => "always", :allowfullscreen => "true"}
+
+
+.sub_content
+
+  = link_to "edit this page", edit_project_path(@project)
+
+
+  %h2.photos
+    = "Flickr Photos"
+  %p
     To add, tag pictures with:
     %br
     %strong= @project.flickr_tag
@@ -20,45 +39,3 @@
     $('.photos').attach(FlickrTag,
     = "'" + @project.flickr_tag + "'"
     );
-
-.span-16.last
-
-  = markdown @project.description
-  %hr
-  
-  .span-8
-    - unless @project.twitter_username.blank?
-      %h3 Twitter feed
-      
-      %p.project_tweets= link_to "@#{h(@project.twitter_username)} on Twitter", "http://twitter.com"
-      %script= "$('.project_tweets').attach(Twitter, '#{h(@project.twitter_username)}');"
-    
-  .span-8.last
-    %h3 Code
-    - if !@project.github_user.blank? && !@project.github_repo.blank?
-      %p.commits
-        The code is available at
-        %a= link_to @project.github_path, @project.github_path
-      %script
-        $('.commits').attach(GithubProjectCommits,
-        = "'#{@project.github_user}', '#{@project.github_repo}'"
-        )
-    - elsif @svn_commits
-      %p.commits
-        The code is in the subversion repo:
-        %a= link_to @project.svn_path, @project.svn_path
-        %ul
-          - @svn_commits.each do |commit|
-            %li
-              = "#{commit[:revision]}: #{commit[:msg]}"
-              %h3.alt= link_to h(@project.url), h(@project.url)
-    - elsif !@project.code_url.blank?
-      %p
-        The code for this project is held at
-        = link_to @project.code_url, @project.code_url
-    - else
-      %p This project has not provided a source code location
-
-%hr
-
-.span-24= link_to "edit this page", edit_project_path(@project)

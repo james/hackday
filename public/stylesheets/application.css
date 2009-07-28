@@ -91,12 +91,25 @@ h2 {
   font-size:1.8em;
   font-weight:100;
   border-left: 3px solid #E3433A;
-  padding-left: 15px;
+  padding-left: 20px;
+  margin-left:1px;
   margin-bottom:20px;
 }
 
 .sub_content h2 {
   border:none;
+  padding:0;
+}
+
+.main_content p,
+.main_content embed,
+.main_content object {
+  margin-left:24px;
+  margin-right:24px;
+}
+
+.sub_content {
+  font-size:14px;
 }
 
 ul {
@@ -113,7 +126,7 @@ ul li {
 
 .header_inner,
 .container .content {
-  width:980px;
+  width:984px;
   margin:0 auto;
   position:relative;
 }
@@ -144,7 +157,7 @@ ul.nav li {
 
 ul.nav li a{
   color:#E3433A;
-  font: 1em "Gill Sans Light","GillSans-Light", "Gill Sans", "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+  font: 18px "Gill Sans Light","GillSans-Light", "Gill Sans", "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
   font-weight:100;
   text-decoration: none;
   padding-top:4px;
@@ -160,20 +173,35 @@ ul.nav li a:hover {
 }
 
 .main_content {
-  margin-right:32%;
+  width:697px;
 }
 
 .sub_content {
   position:absolute;
-  top:0;
   right:0;
-  width:30%;
+  top:0;
+  width:215px;
+}
+
+hr {
+  margin:1em 24px;
+  color:#e5e5e5;
+  background-color:#e5e5e5;
+  border-color:#e5e5e5;
 }
 
 /* PAGE SPECIFIC STYLES */
+
+ul.flickr_tag_photos {
+  margin:0;
+}
 
 ul.flickr_tag_photos li{
   display:inline;
   margin:0;
   padding:0;
+}
+
+ul.flickr_tag_photos li img{
+  width:71px;
 }

@@ -1,6 +1,6 @@
 / %h2 Rewired State: National Hack The Government Day
 
-.span-11.colborder
+.main_content
   %p On Saturday March 7th 2009 Rewired State held "<strong>National Hack The Government Day</strong>" at the new Guardian offices in Kings Cross. <strong>80 developers</strong> created <strong>working projects</strong> from <strong>public sector information</strong> between <strong>10am to 6pm</strong>, and presenting them to government officials and the media in the evening, before heading to the pub.
 
   %p 
@@ -24,26 +24,23 @@
     And there was so much more, more than I can write here. But not more than other people can write. Have a look at our
     = link_to "buzz page", pages_path(:action => "buzz")
     for more.
-
-.span-12.last
-  .span-5.colborder
-    %h3 
-      = Project.count
-      hacks and counting...
-    %p= link_to "View details on all submitted projects made for Rewired State", projects_path
-    
   
-  .span-6.last
-    %h3 The hype
-    
-    %p= link_to "We're collected all the articles, blogs, tweets and photos", pages_path(:action => "buzz")
-      
-
   %hr
+  
+  <embed width="100%" height="500" flashvars="toJSONString=function () {
+  return s.object(this);
+  }" tojsonstring="function () {
+  return s.object(this);
+  }" allowscriptaccess="always" allowfullscreen="true" quality="high" bgcolor="#000000" name="showplayer1" id="showplayer1" style="" src="http://e.blip.tv/scripts/flash/showplayer.swf?autostart=false&amp;backcolor=0xFFFFFF&amp;lightcolor=0xAAAAAA&amp;frontcolor=0x999999&amp;showplaylist=true&amp;enablejs=true&amp;showplayerpath=http://e.blip.tv/scripts/flash/showplayer.swf&amp;file=http://rewiredstate.blip.tv/rss/flash/?referrer=rewiredstate.blip.tv" type="application/x-shockwave-flash"/>
+  
 
-  .presentation_videos
-    <embed width="100%" height="200" flashvars="toJSONString=function () {
-    return s.object(this);
-    }" tojsonstring="function () {
-    return s.object(this);
-    }" allowscriptaccess="always" allowfullscreen="true" quality="high" bgcolor="#000000" name="showplayer1" id="showplayer1" style="" src="http://e.blip.tv/scripts/flash/showplayer.swf?autostart=false&amp;backcolor=0xFFFFFF&amp;lightcolor=0xAAAAAA&amp;frontcolor=0x999999&amp;showplaylist=true&amp;enablejs=true&amp;showplayerpath=http://e.blip.tv/scripts/flash/showplayer.swf&amp;file=http://rewiredstate.blip.tv/rss/flash/?referrer=rewiredstate.blip.tv" type="application/x-shockwave-flash"/>
+.sub_content
+  %h3 
+    = Project.count
+    hacks and counting...
+  %p= link_to "View details on all submitted projects made for Rewired State", projects_path
+  
+
+  %h3 The hype
+  
+  %p= link_to "We're collected all the articles, blogs, tweets and photos", pages_path(:action => "buzz")
