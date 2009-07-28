@@ -28,6 +28,7 @@
   .show_hide_section
     %p
       %a.skills_requirements.show_link.sub_text{:href => "#skills_requirements"} View skill requirements
+    
     #skills_requirements.show_content
       %p As with any geek event, the skill levels required to attend Young Rewired State has been a source of concern for many people. This is totally normal when people first approach a geek group, but very rarely a genuine issue once you arrive. 
 
@@ -52,7 +53,9 @@
         If in any doubt, don't hesitate to contact us at
         %a{:href=> "mailto:info@rewiredstate.org"} info@rewiredstate.org
         and we'll answer any questions.
-      
+    %p
+      %a.play_link.sub_text{:href => "#signup"} Sign Up
+    
   %hr
 
   %h2 For the old(er) people
@@ -60,6 +63,9 @@
   %p A weekend for teenagers to create hardware and software hacks using government data as well as any other data sets we find that might be useful. Rewired State geeks will be on hand to teach and assist where necessary; and at the end of the weekend there will be a show and tell to government Ministers, civil servants, Press, entrepreneurs and interested parties/sponsors.
 
   %p This is a group of talent that we think should be encouraged to be more visible, we are also going to take this opportunity to raise awareness of the types of skill now required and make a push to affect the curriculum - which is a woefully poor reflection of the programming languages available and/or useful.
+  
+  %p
+    %a.play_link.sub_text{:href => "#signup"} Sign Up
 
   %hr
 
@@ -71,9 +77,21 @@
   
   %hr
 
-  %h2 Sign up
+  %h2#signup Sign up
   
-  %p I'd like to register for Young Rewired State, I'm a 
+  %p
+    I'd like to register for Young Rewired State, I'm a 
+    %select.signup_chooser
+      %option ---
+      %option{:value => "young_form"} Young Person
+      %option{:value => "mentor_form"} Older Hacker
+      %option{:value => "observer_form"} Observer
   
-  <iframe src="http://spreadsheets.google.com/embeddedform?key=p6Stpim9Vjoz-2BYAgd91AA" width="100%" height="540" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+  .sign_up_forms
+    / Young
+    <iframe id="young_form" src="http://spreadsheets.google.com/embeddedform?key=p6Stpim9Vjoz-2BYAgd91AA" width="100%" height="540" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+  
+    / Mentor
+    <iframe id="mentor_form" src="http://spreadsheets.google.com/embeddedform?key=tRFhfbPtSoQBXWYGm4BaQmg" width="500" height="625" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+  
   
