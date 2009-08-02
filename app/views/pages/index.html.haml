@@ -1,17 +1,36 @@
-.poster
-  %p Government isn't very good at computers. 
-  %p They spend millions to produce mediocre websites, hide away really useful public information and generally get it wrong. Which is a shame.
+.main_content
+  .poster
+    %p Government isn't very good at computers. 
+    %p They spend millions to produce mediocre websites, hide away really useful public information and generally get it wrong. Which is a shame.
+    .hr
+      %p
+    %p Calling all people who make things.
+    %p
+      %em We're going to show them how its done.
 
-  %p 
-    %em Calling all people who make things.
-    We're going to show them how its done.
+  %h2 Recent Events
 
-%ul.home_nav
-  %li= link_to "National Hack The Government Day", pages_path(:action => 'hackthegovday')
-  %li= link_to "Young Rewired State", pages_path(:action => 'young'), :class => "new"
-  %li= link_to "Hack Day Parliament", pages_path(:action => 'parliament'), :class => "new"
-  %li= link_to "API wiki", "http://wiki.rewiredstate.org/?page=APIs"
-  %li= link_to "Creations", projects_path
-  %li= link_to "Blog", "http://blog.rewiredstate.org"
-  %li= link_to "Buzz", pages_path(:action => 'buzz')
-  %li= link_to "Join In", pages_path(:action => "joinin")
+  %h3= link_to "National Hack The Government Day", pages_path(:action => 'hackthegovday')
+
+  %p On Saturday March 7th 2009 Rewired State held "National Hack The Government Day" at the new Guardian offices in Kings Cross. 80 developers created working projects from public sector information between 10am to 6pm.
+
+  %p
+    %a.play_link.sub_text{:href => pages_path(:action => 'hackthegovday')} Read More
+  
+  %h2 Upcoming Events
+
+  %h3= link_to "Young Rewired State", pages_path(:action => 'young')
+
+  %p Young Rewired State is a weekend event emulating the success of ReWired State's National Hack the Government Day, but this time with hackers aged 15-18. 22nd and 23rd August 2009, Google HQ London, Victoria.
+  
+
+  %p
+    %a.play_link.sub_text{:href => pages_path(:action => 'young')} Read More
+  
+
+.sub_content
+  %h2 Join In
+  %ul
+    %li= link_to "@rewiredstate on Twitter", "http://twitter.com/rewiredstate"
+    %li= link_to "Join our Mailing List", "http://groups.google.com/group/rewiredstate"
+    %li= link_to "#rewiredstate on freenode IRC", "irc://irc.freenode.net/rewiredstate"

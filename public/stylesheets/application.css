@@ -96,9 +96,23 @@ h2 {
   margin-bottom:20px;
 }
 
+h3 {
+  font-size:24px;
+  font-weight:normal;
+  margin: 0 0 10px 24px;
+}
+
 .sub_content h2 {
   border:none;
   padding:0;
+}
+
+.sub_content ul {
+  margin:0;
+}
+
+.sub_content li {
+  padding:2px;
 }
 
 .main_content p,
@@ -228,4 +242,32 @@ ul.flickr_tag_photos li img{
 
 .sign_up_forms {
   margin:0 24px;
+}
+
+.poster {
+  font-family: "Gill Sans Light","GillSans-Light", "Gill Sans", "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+  font-variant: small-caps;
+  text-align: center;
+  font-size:26px;
+  font-weight:100;
+  margin:0 25px 35px;
+  padding:15px 10px;
+  border-bottom:3px solid #E3433A;
+  border-top:3px solid #E3433A;
+}
+
+.poster p {
+  margin:0;
+}
+
+.poster em {
+  color:#E3433A;
+  font-style: normal;
+}
+
+.poster .hr {
+  background-image: url('/images/fancy_hr.png');
+  background-position: center center;
+  background-repeat:no-repeat;
+  height:1em;
 }
