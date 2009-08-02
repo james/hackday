@@ -115,6 +115,10 @@ h3 {
   padding:2px;
 }
 
+.sub_content ul.sub_nav li{
+  border-bottom:1px solid #ddd;
+}
+
 .main_content p,
 .main_content embed,
 .main_content object {

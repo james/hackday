@@ -5,7 +5,7 @@
 
   %hr
   
-  %h2 When and Where
+  %h2#when_and_where When and Where
   
   .clearfix
     %img{:src => "images/yrs_map.png", :class => "body_image"}
@@ -15,7 +15,7 @@
   
   %hr
   
-  %h2 For the young people
+  %h2#for_the_young_people For the young people
   
   %p Fancy hacking the Government into shape? Want to create websites and applications that can help you, your school, town, country or the world?
 
@@ -58,7 +58,7 @@
     
   %hr
 
-  %h2 For the old(er) people
+  %h2#for_the_older_people For the old(er) people
 
   %p A weekend for teenagers to create hardware and software hacks using government data as well as any other data sets we find that might be useful. Rewired State geeks will be on hand to teach and assist where necessary; and at the end of the weekend there will be a show and tell to government Ministers, civil servants, Press, entrepreneurs and interested parties/sponsors.
 
@@ -69,7 +69,7 @@
 
   %hr
 
-  %h2 Press
+  %h2#press Press
   
   %p
     Tiffany from Stimulation Ltd is handling the PR fro Young Rewired State. You can contact her at
@@ -97,4 +97,10 @@
     /Observer
     <iframe id="observer_form" src="http://spreadsheets.google.com/embeddedform?key=tM90xRS_8d5P1PE7E_NUrpg" width="100%" height="680" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
   
-  
+.sub_content
+  %ul.sub_nav
+    %li= link_to "When and Where", "#when_and_where"
+    %li= link_to "For the Young People", "#for_the_young_people"
+    %li= link_to "For the Old(er) People", "#for_the_older_people"
+    %li= link_to "Press", "#press"
+    %li= link_to "Sign Up", "#signup"
