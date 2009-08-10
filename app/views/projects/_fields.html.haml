@@ -47,13 +47,4 @@
       Bliptv embed id:
     = form.text_field 'bliptv_id'
 
-%p
-  %label
-    .span-4
-      Due to spam, please type "human" into this field:
-    = text_field_tag 'is_human'
-/ %p
-/   %label
-/     .span-4
-/       OpenID:
-/     = form.text_field 'openid', :value => session[:openid_url]
+= render :partial => "common/human_test"

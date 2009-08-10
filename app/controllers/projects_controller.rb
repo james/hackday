@@ -8,7 +8,6 @@ class ProjectsController < ApplicationController
   # before_filter :require_owner, :only => [:edit, :update]
   # before_filter :require_user, :only => [:new, :create]
   before_filter :fetch_svn_commits, :only => :show
-  before_filter :check_human, :only => [:create, :update]
   
   def current_object
     @current_object ||= current_model.find_by_slug(params[:id])
@@ -31,9 +30,5 @@ class ProjectsController < ApplicationController
       @svn_commits = []
       doc.elements.each('log/logentry'){|e| @svn_commits.push(:revision => e.attributes["revision"], :msg => e.text('msg'))}
     end
-  end
-  
-  def check_human
-    render :text => "It doesn't look like you're a human" and return unless params[:is_human] == "human"
   end
 end
