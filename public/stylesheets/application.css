@@ -295,6 +295,17 @@ ul.flickr_tag_photos li img{
   width:5%;
 }
 
+.data_sources .edit a,
+.data_sources .delete a{
+  color:#999;
+}
+
+.data_sources .edit a:hover,
+.data_sources .delete a:hover{
+  color:#E3433A;
+}
+
+
 .data_sources td {
   padding:0.7em 0;
   border-top: 1px solid #999;
