@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   # Uncomment this to filter the contents of submitted sensitive data parameters
   # from your application log (in this case, all fields with names like "password"). 
   # filter_parameter_logging :password
-  before_filter :check_human, :only => [:create, :update]
+  before_filter :check_human, :only => [:create, :update, :destroy]
   
   def check_human
     render :text => "It doesn't look like you're a human" and return unless params[:is_human] == "human"
