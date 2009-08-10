@@ -3,4 +3,9 @@ class DataSource < ActiveRecord::Base
   
   version_fu
   is_paranoid
+  
+  validates_presence_of :title, :link
+  validates_length_of :title, :maximum=>255
+  validates_length_of :category, :maximum=>255
+  validates_length_of :link, :maximum=>255
 end
