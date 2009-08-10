@@ -1,0 +1,19 @@
+- form_for @data_source do |form|
+  %p
+    %label
+      Title:
+    = form.text_field 'title'
+  %p
+    %label
+      URL:
+    = form.text_field 'link'
+  %p
+    %label
+      Category:
+    = form.select 'category', DataSource::SECTIONS
+  %p
+    %label
+      Description:
+    = form.text_field 'description'
+  
+  

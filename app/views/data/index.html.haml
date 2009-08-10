@@ -1,0 +1,7 @@
+%ul
+  - @data_sources.each do |data_source|
+    %li
+      = link_to data_source.title, data_source.link
+      \:
+      = data_source.description
+  
