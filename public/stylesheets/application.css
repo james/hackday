@@ -275,3 +275,27 @@ ul.flickr_tag_photos li img{
   background-repeat:no-repeat;
   height:1em;
 }
+
+.data_sources {
+  width:100%;
+  margin:1em 0 2em;
+}
+
+.data_sources .title {
+  width:30%;
+  text-align:right;
+  padding-right:1em;
+}
+
+.data_sources .description{
+  width:60%;
+}
+.data_sources .edit,
+.data_sources .delete {
+  width:5%;
+}
+
+.data_sources td {
+  padding:0.7em 0;
+  border-top: 1px solid #999;
+}
