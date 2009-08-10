@@ -1,6 +1,6 @@
 class DataController < ApplicationController
   def index
-    @data_sources = DataSource.find(:all, :group => "category")
+    @data_sources = DataSource.find(:all).group_by{|x| x.category}
   end
   
   def new

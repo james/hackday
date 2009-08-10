@@ -1,10 +1,12 @@
-%table
-  - @data_sources.each do |data_source|
-    %tr
-      %td= link_to data_source.title, data_source.link
-      %td= data_source.description
-      %td= link_to "edit", edit_data_source_path(data_source)
-      %td= link_to "delete", delete_data_source_path(data_source)
+- @data_sources.each_pair do |group, data_sources|
+  %h2=group
+  %table
+    - data_sources.each do |data_source|
+      %tr
+        %td= link_to data_source.title, data_source.link
+        %td= data_source.description
+        %td= link_to "edit", edit_data_source_path(data_source)
+        %td= link_to "delete", delete_data_source_path(data_source)
 
 = link_to "Add a data source", new_data_source_path
   
