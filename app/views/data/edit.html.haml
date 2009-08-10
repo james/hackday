@@ -1,4 +1,4 @@
 - form_for @data_source do |form|
   = render :partial => "fields", :locals => {:form => form}
-  = form.submit "Add to list"
+  = form.submit
   = link_to "Cancel", data_sources_path

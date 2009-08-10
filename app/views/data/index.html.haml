@@ -1,7 +1,10 @@
-%ul
+%table
   - @data_sources.each do |data_source|
-    %li
-      = link_to data_source.title, data_source.link
-      \:
-      = data_source.description
+    %tr
+      %td= link_to data_source.title, data_source.link
+      %td= data_source.description
+      %td= link_to "edit", edit_data_source_path(data_source)
+      %td= link_to "delete", delete_data_source_path(data_source)
+
+= link_to "Add a data source", new_data_source_path
   

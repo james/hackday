@@ -1,0 +1,4 @@
+%h2 Are you sure?
+- form_for @data_source, :html => {:method => :delete} do |form|
+  = form.submit "Delete this entry"
+  = link_to "Cancel", data_sources_path
