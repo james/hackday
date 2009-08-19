@@ -310,3 +310,7 @@ ul.flickr_tag_photos li img{
   padding:0.7em 0;
   border-top: 1px solid #999;
 }
+
+.sub_content img {
+  margin-bottom:1em;
+}
