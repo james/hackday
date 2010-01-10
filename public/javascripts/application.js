@@ -134,19 +134,19 @@ ShowHideSection = $.klass({
   })
 });
 
-SignUpChooser = $.klass({
-  initialize: function() {
-    $('.sign_up_forms').children().hide();
-  },
-  onchange: function() {
-    var current_section = this.element.attr("value");
-    $('.sign_up_forms').slideUp(600, function() {
-      $('.sign_up_forms').children().hide();
-      $("#"+current_section).show();
-      $('.sign_up_forms').slideDown(600);
-    })
-  }
-});
+// SignUpChooser = $.klass({
+//   initialize: function() {
+//     $('.sign_up_forms').children().hide();
+//   },
+//   onchange: function() {
+//     var current_section = this.element.attr("value");
+//     $('.sign_up_forms').slideUp(600, function() {
+//       $('.sign_up_forms').children().hide();
+//       $("#"+current_section).show();
+//       $('.sign_up_forms').slideDown(600);
+//     })
+//   }
+// });
 
 jQuery(function($) {
   $(".slide_quote").attach(SlideShow);
